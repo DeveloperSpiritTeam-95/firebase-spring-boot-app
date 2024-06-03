@@ -43,6 +43,8 @@ public class EmployeeController {
     }
 
 
+    // some code changes require here for updating records
+    // better to go research on it.
     @PutMapping("/updateEmployee")
     public String updateEmployee(@@RequestBody Employee employee){
         CollectionReference reference = initializer.getFireBase().collection("Employee");
