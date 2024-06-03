@@ -43,4 +43,11 @@ public class EmployeeController {
     }
 
 
+    @PutMapping("/updateEmployee")
+    public String updateEmployee(@@RequestBody Employee employee){
+        CollectionReference reference = initializer.getFireBase().collection("Employee");
+        reference.document(String.valueOf(employee.getId())).set(employee);
+        return "Success";
+    }
+
 }
